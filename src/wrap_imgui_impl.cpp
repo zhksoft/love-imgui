@@ -237,7 +237,7 @@ static int w_AddFontFromFileTTF(lua_State *L) {
     ImFontConfig* fontCfg = (ImFontConfig*)lua_touserdata(L, 3);
 
     ImGuiIO& io = ImGui::GetIO();
-    ImFont* font = io.Fonts->AddFontFromFileTTF(&(fullPath[0]), pixelSize);
+    ImFont* font = io.Fonts->AddFontFromFileTTF(&(fullPath[0]), pixelSize, 0, io.Fonts->GetGlyphRangesChinese());
     lua_settop(L, 0);
 
     if (font == nullptr) {
